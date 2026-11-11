@@ -1,0 +1,64 @@
+/* Page layout: dark, centered */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #111;
+  color: #eee;
+  font-family: system-ui, sans-serif;
+}
+
+.game { text-align: center; padding: 1rem; }
+
+h1 { letter-spacing: 0.15em; text-transform: uppercase; }
+
+/* Row of lights inside a dark "gantry" */
+.lights {
+  display: flex;
+  gap: clamp(8px, 2vw, 20px);
+  justify-content: center;
+  background: #000;
+  padding: 1.5rem;
+  border-radius: 16px;
+  margin: 1.5rem auto;
+  width: fit-content;
+}
+
+/* Default state: grey (off) */
+.light {
+  width: clamp(40px, 12vw, 70px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #444;
+  border: 3px solid #222;
+  transition: background 0.05s, box-shadow 0.05s;
+}
+
+/* Lit state: red with a glow */
+.light.on {
+  background: #ff1a1a;
+  box-shadow: 0 0 20px 6px rgba(255, 26, 26, 0.7);
+}
+
+/* Result / status text */
+.message { min-height: 2.5rem; font-size: 1.4rem; margin: 0 0 1rem; }
+.message.error  { color: #ff5555; font-weight: bold; }  /* jump start */
+.message.result { color: #5dff8a; font-weight: bold; }  /* reaction time */
+
+/* Button */
+.start-btn {
+  font-size: 1.1rem;
+  padding: 0.7rem 2.2rem;
+  border: 0;
+  border-radius: 8px;
+  background: #e10600;   /* F1 red */
+  color: #fff;
+  cursor: pointer;
+}
+.start-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.hint { color: #888; font-size: 0.9rem; }

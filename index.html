@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>F1 Lights Out Reaction Timer</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="game">
+    <h1>Lights Out</h1>
+
+    <!-- 5 lights; JS toggles the "on" class to turn each one red -->
+    <div class="lights" aria-hidden="true">
+      <div class="light"></div>
+      <div class="light"></div>
+      <div class="light"></div>
+      <div class="light"></div>
+      <div class="light"></div>
+    </div>
+
+    <!-- Status / result text (aria-live so screen readers announce changes) -->
+    <p id="message" class="message" aria-live="polite">Press Start, then react when the lights go out.</p>
+
+    <button id="start-btn" class="start-btn" type="button">Start</button>
+    <p class="hint">Click anywhere or press Space to react.</p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
